@@ -24,7 +24,7 @@ void draw() {
   for(int j = 0; j < num; j++){
   r[j].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
   r[j].display();      //display the raindrop
-  if (r[j].isInContactWith(mouse)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
+  if (r[j].isInContactWith(c)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
     r[j].reset();                         //if it is, reset the raindrop
   }
   if (r[j].loc.y > height + r[j].diam/2) {     //check to see if the raindrop goes below the bottom of the screen

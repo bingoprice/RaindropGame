@@ -25,8 +25,8 @@ class Raindrop {
     loc.set(random(width),0);
     vel.set(0,0);
   }
- boolean isInContactWith(PVector something){
-   if(dist(loc.x,loc.y,something.x,something.y) <= diam/2) {
+ boolean isInContactWith(Catcher c){
+   if(dist(loc.x,loc.y,c.x,c.y) <= diam/2) {
      return true;
    } else {
      return false;
