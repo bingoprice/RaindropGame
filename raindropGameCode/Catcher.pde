@@ -8,6 +8,7 @@ Catcher(float x,float y){
 }
 
 void display() {
+  imageMode(CENTER);
    image(bucket,mouseX,mouseY,diam,diam);
 }
 }

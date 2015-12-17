@@ -6,8 +6,8 @@ class Raindrop {
 
   Raindrop(float x, float y ) {
     loc = new PVector(x,y);
-    vel = new PVector(0,0);
-    acc = new PVector(0,1);
+    vel = PVector.random2D();
+    acc = new PVector(0,.1);
     diam = 5;
     fill(0,0,128);
   }
@@ -25,11 +25,16 @@ class Raindrop {
     loc.set(random(width),0);
     vel.set(0,0);
   }
- boolean isInContactWith(Catcher c){
-   if(dist(loc.x,loc.y,c.x,c.y) <= diam/2) {
+  boolean isDead(){
+   if(dist(loc.x,loc.y,mouse.x,mouse.y) <= diam/2+25) {
      return true;
    } else {
      return false;
-   }
+   } 
+  }
+ 
+ void rebirth(float x, float y){
+  loc.set(x,y);
+  vel = PVector.random2D();
  }
 }
